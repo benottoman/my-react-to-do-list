@@ -1,5 +1,5 @@
 import React from 'react'
-
+import TodoItem from './TodoItem'
 
 
 export default class TodoList extends React.Component {
@@ -11,7 +11,7 @@ export default class TodoList extends React.Component {
 				{ /*  For each todo in this.props.todos return an li element */ }	
 				{
 					this.props.todos.map((todo) => {
-						return <li key={todo.id}>{todo.text}</li>
+						return <TodoItem key={todo.id} todo={todo} />
 					})
 				}
 			</ul>

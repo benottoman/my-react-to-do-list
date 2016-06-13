@@ -22,19 +22,24 @@ export default class TodoInput extends React.Component {
 	handleSubmit(event){
 		event.preventDefault()
 		this.props.dispatch(actions.addTodo(this.state.inputText))
+		this.setState({
+			inputText: ''			
+		})
 	}
 
 
 	render(){
 		return (
 			<div>
-				<input 
-					type="text" 
-					value={this.state.inputText} 
-					placeholder="Type in your todo"
-					onChange={this.handleChange.bind(this)} 
-				/>
-				<button onClick={this.handleSubmit.bind(this)}>Submit</button>
+				<form onSubmit={this.handleSubmit.bind(this)}>
+					<input 
+						type="text" 
+						value={this.state.inputText} 
+						placeholder="Type in your todo"
+						onChange={this.handleChange.bind(this)} 
+					/>
+					<input type="submit" text="Submit" />
+				</form>
 			</div>
 		)
 	}
