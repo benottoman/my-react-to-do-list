@@ -11,7 +11,7 @@ export default class TodoList extends React.Component {
 				{ /*  For each todo in this.props.todos return an li element */ }	
 				{
 					this.props.todos.map((todo) => {
-						return <TodoItem key={todo.id} todo={todo} />
+						return <TodoItem key={todo.id} todo={todo} actions={this.props.actions} />
 					})
 				}
 			</ul>

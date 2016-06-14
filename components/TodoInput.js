@@ -1,5 +1,6 @@
 import React from 'react'
-import actions from '../redux/actions'
+// import actions from '../redux/actions'     Don't need to import now that we're
+// passing the wrapped action down from App.js
 
 // Smart component
 export default class TodoInput extends React.Component {
@@ -21,7 +22,8 @@ export default class TodoInput extends React.Component {
 
 	handleSubmit(event){
 		event.preventDefault()
-		this.props.dispatch(actions.addTodo(this.state.inputText))
+		// this.props.dispatch(actions.addTodo(this.state.inputText))
+		this.props.addTodo(this.state.inputText)
 		this.setState({
 			inputText: ''			
 		})
@@ -38,7 +40,7 @@ export default class TodoInput extends React.Component {
 						placeholder="Type in your todo"
 						onChange={this.handleChange.bind(this)} 
 					/>
-					<input type="submit" text="Submit" />
+					<input type="submit" value="Submit" />
 				</form>
 			</div>
 		)

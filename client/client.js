@@ -12,14 +12,16 @@ let initialState = {
 		completed: false,
 
 		text: 'Our first todo'
-	}]
+	}],
+	user: {
+		username: 'ben',
+		id: 13
+	}
 }
 
 
 
 let store = configureStore(initialState)
-
-
 
 
 const app = document.getElementById('app')
